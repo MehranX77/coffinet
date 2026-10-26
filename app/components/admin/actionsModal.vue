@@ -101,7 +101,7 @@ const changeStatusRequest = async () => {
             statusId: selectedStatus.value
         }
     })
-    if (data.value.status === 201) {
+    if (data?.value?.status === 201) {
         toast.add({
             color: 'success',
             title: 'عملیات موفق',
@@ -110,7 +110,15 @@ const changeStatusRequest = async () => {
         })
     }
     console.log(data.value);
-    console.log(error.value);
+    console.log(error?.value?.data);
+
+    if (data?.value?.status !== 201) {
+        toast.add({
+            color: 'error',
+            title: 'خطایی رخ داد',
+            description: data?.value ?? 'خطای غیر منتظره ای رخ داد'
+        })
+    }
 
 }
 
