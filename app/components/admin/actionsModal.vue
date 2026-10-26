@@ -36,11 +36,12 @@
                 </UForm>
                 <USeparator label="پیوست‌ها و مدارک" class="my-3" />
                 <div v-if="prop.customerData.files.length > 0" class="flex items-center gap-2 flex-wrap">
-                    <!-- فایل دوم: مدارک تکمیلی PDF -->
-                    <UButton v-for="file in customerFiles" :key="file._id"
-                        :to="`http://localhost:4000/uploads/${file.filename}`" target="_blank" external
-                        icon="i-solar:file-text-linear" color="neutral" variant="subtle" size="lg"
-                        :label="file.filename" />
+                    <template v-for="file in customerFiles" :key="file._id">
+                        <a dir="rtl" class="rounded-lg border-2 border-slate-200 p-2 flex gap-2" :href="`http://localhost:4000/uploads/${file.filename}`" download target="_blank">
+                            {{ file.filename }}
+                            <UIcon name="solar:file-download-linear" class="self-center"/>
+                        </a>
+                    </template>
                 </div>
                 <UAlert v-else title="پیوستی وجود ندارد یا بارگذاری نشده است" variant="outline" color="warning" close />
             </div>
@@ -64,8 +65,10 @@ const prop = defineProps<{
 }>()
 
 const customerFiles = computed(() => {
-    return prop.customerData?.files || []
+    return prop.customerData?.files ?? []
 })
+
+console.log(prop.customerData?._id);
 
 
 const fullname = ref<string>(prop.customerData.fullname)
@@ -98,14 +101,14 @@ const changeStatusRequest = async () => {
             statusId: selectedStatus.value
         }
     })
-if (data.value.status === 201) {
-    toast.add({
-        color: 'success',
-        title:'عملیات موفق',
-        description: 'وضعیت سفارش با موفقیت تغییر کرد',
-        icon:'solar:check-circle-linear'
-    })
-}
+    if (data.value.status === 201) {
+        toast.add({
+            color: 'success',
+            title: 'عملیات موفق',
+            description: 'وضعیت سفارش با موفقیت تغییر کرد',
+            icon: 'solar:check-circle-linear'
+        })
+    }
     console.log(data.value);
     console.log(error.value);
 
