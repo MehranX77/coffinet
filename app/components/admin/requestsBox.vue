@@ -69,7 +69,15 @@ const selectItems = ref([
 const selectValue = ref(selectItems.value[0]?.value)
 const icon = computed(() => selectItems.value.find(item => item.value === selectValue.value)?.icon)
 
+const Tdata = computed(() => {
+    const allData = prop.data || []
 
+    if (selectValue.value === 0) {
+        return allData
+    }
+
+    return allData.filter((item: any) => String(item.status) === String(selectValue.value))
+})
 //table
 const columns = [
     { accessorKey: 'index', header: 'شماره' },
@@ -80,15 +88,6 @@ const columns = [
     { accessorKey: 'status', header: 'وضعیت' },
     { accessorKey: 'actions', header: 'عملیات' },
 ]
-
-const Tdata = ref<any[]>([])
-
-// render request list into TData 
-
-prop.data.forEach(item => Tdata.value.push(item))
-
-console.log(Tdata.value);
-
 
 //action modal code
 const overlay = useOverlay()

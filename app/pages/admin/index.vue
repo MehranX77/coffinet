@@ -3,7 +3,7 @@
         <AdminNavbar />
         <LazyAdminTopCards :data = "result?.data"/>
         <LazyAdminRequestsBox :data = "result?.data"/>
-        <LazyAdminSales />
+        <LazyAdminSales :data = "result?.data"/>
     </div>
 </template>
 

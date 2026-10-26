@@ -24,36 +24,34 @@
 <script setup lang="ts">
 import type { ChartData } from '@nuxt/ui'
 
-const data = ref<ChartData[]>([
-    {
-        month: 'فروردین',
-        requests: 186,
-        complited: 80,
-        rejected: 80
-    },
-    {
-        month: 'اردیبهشت',
-        requests: 186,
-        complited: 80,
-        rejected: 80
-    },
-    {
-        month: 'خرداد',
-        requests: 186,
-        complited: 80,
-        rejected: 80
-    },
-    {
-        month: 'تیر',
-        requests: 186,
-        complited: 80,
-        rejected: 80
-    },
-    {
-        month: 'مرداد',
-        requests: 186,
-        complited: 80,
-        rejected: 80
-    },
-])
+const prop = withDefaults(defineProps<{
+    data?: any[]
+}>(), {
+    data: () => []
+})
+
+const data = computed<ChartData[]>(() => {
+
+const months = ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند']
+    
+    const stats = (prop.data || []).reduce((acc: any, item: any) => {
+        if (!item.createdAt) return acc
+        const m = new Intl.DateTimeFormat('fa-IR', { calendar: 'persian', month: 'long' }).format(new Date(item.createdAt))
+        
+        if (!acc[m]) acc[m] = { requests: 0, complited: 0, rejected: 0 }
+        
+        acc[m].requests++
+        if (String(item.status) === '2') acc[m].complited++
+        if (String(item.status) === '3') acc[m].rejected++
+        
+        return acc
+    }, {})
+
+    return months.map(month => ({
+        month,
+        requests: stats[month]?.requests || 0,
+        complited: stats[month]?.complited || 0,
+        rejected: stats[month]?.rejected || 0,
+    }))
+})
 </script>

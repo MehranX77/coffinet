@@ -23,21 +23,24 @@
                     </UBadge>
                     <UBadge size="xl" color="secondary" variant="outline" icon="i-solar:clock-circle-linear"
                         class="flex-1" :ui="{ base: 'py-2' }">زمان ثبت:
-                        <NuxtTime :datetime="prop.customerData.createdAt" locale="fa-IR"  hour="2-digit" minute="2-digit" second="2-digit"/>
+                        <NuxtTime :datetime="prop.customerData.createdAt" locale="fa-IR" hour="2-digit" minute="2-digit"
+                            second="2-digit" />
                     </UBadge>
                 </div>
                 <USeparator label="وضعیت سفارش" class="my-3" />
                 <USelect variant="soft" size="xl" placeholder="یک مورد را انتخاب کنید" v-model="selectedStatus"
-                    :items="selectItems" />
+                    :items="selectItems" @change="changeStatusRequest" />
                 <USeparator label="ثبت یادداشت" class="my-3" />
                 <UForm>
-                    <UTextarea variant="soft" class="w-full" :rows="3"
-                        placeholder="یادداشت خود را ثبت کنید" />
+                    <UTextarea disabled variant="soft" class="w-full" :rows="3" placeholder="یادداشت خود را ثبت کنید" />
                 </UForm>
                 <USeparator label="پیوست‌ها و مدارک" class="my-3" />
                 <div v-if="prop.customerData.files.length > 0" class="flex items-center gap-2 flex-wrap">
                     <!-- فایل دوم: مدارک تکمیلی PDF -->
-                    <UButton v-for="file in customerFiles" :key="file._id" :to="`http://localhost:4000/uploads/${file.filename}`" target="_blank" external icon="i-solar:file-text-linear" color="neutral" variant="subtle" size="lg" :label="file.filename" />
+                    <UButton v-for="file in customerFiles" :key="file._id"
+                        :to="`http://localhost:4000/uploads/${file.filename}`" target="_blank" external
+                        icon="i-solar:file-text-linear" color="neutral" variant="subtle" size="lg"
+                        :label="file.filename" />
                 </div>
                 <UAlert v-else title="پیوستی وجود ندارد یا بارگذاری نشده است" variant="outline" color="warning" close />
             </div>
@@ -45,7 +48,6 @@
         <template #footer>
             <div class="flex justify-between w-full">
                 <div class="flex gap-x-2">
-                    <UButton icon="i-solar:diskette-linear" size="xl">ذخیره تغییرات</UButton>
                     <UButton icon="i-solar:phone-linear" size="xl" color="secondary">تماس با مشتری</UButton>
                 </div>
                 <UButton size="xl" variant="subtle" color="neutral">بستن</UButton>
@@ -56,7 +58,7 @@
 
 <script setup lang="ts">
 import type { SelectItem } from '@nuxt/ui';
-
+const toast = useToast()
 const prop = defineProps<{
     customerData?: any
 }>()
@@ -65,12 +67,9 @@ const customerFiles = computed(() => {
     return prop.customerData?.files || []
 })
 
-console.log(prop.customerData);
-
 
 const fullname = ref<string>(prop.customerData.fullname)
 const phone = ref<number>(prop.customerData.phone)
-const selectedStatus = ref<number>()
 const selectItems = ref<SelectItem[]>([
     {
         label: 'دریافت درخواست',
@@ -89,5 +88,27 @@ const selectItems = ref<SelectItem[]>([
         value: 3
     },
 ])
+const selectedStatus = ref<number>()
+
+const changeStatusRequest = async () => {
+    const { data, error } = await useFetch('/api/updateCustomerRequest', {
+        method: 'POST',
+        body: {
+            id: prop.customerData?._id,
+            statusId: selectedStatus.value
+        }
+    })
+if (data.value.status === 201) {
+    toast.add({
+        color: 'success',
+        title:'عملیات موفق',
+        description: 'وضعیت سفارش با موفقیت تغییر کرد',
+        icon:'solar:check-circle-linear'
+    })
+}
+    console.log(data.value);
+    console.log(error.value);
+
+}
 
 </script>
