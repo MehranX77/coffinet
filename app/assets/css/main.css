@@ -1,0 +1,82 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@font-face {
+  font-family: Vazirmatn-regular;
+  src: url("/assets/fonts/Vazirmatn-FD-Regular.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Vazirmatn-bold;
+  src: url("/assets/fonts/Vazirmatn-Bold.woff2") format("woff2");
+  font-weight: bolder;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Vazirmatn-extra-bold;
+  src: url("/assets/fonts/Vazirmatn-ExtraBold.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Vazirmatn-digit;
+  src: url("/assets/fonts/Vazirmatn-FD-Medium.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Billabong;
+  src: url("/assets/fonts/Billabong.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme{
+  --breakpoint-3xl: 160rem
+}
+
+
+* {
+  scroll-behavior: smooth !important;
+  direction: rtl;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #232323;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4c4c4c;
+  border-radius: 10px;
+}
+
+
+:root {
+--text-regular : "Vazirmatn-regular";
+--heading-extra-bold: "Vazirmatn-extra-bold"
+}
+
+body {
+  font-family: var(--text-regular) !important;
+  transition: all 0.1s ease;
+}
+
+h1 {
+    font-family: var(--heading-extra-bold);
+} 
+span{
+  font-family: var(--Vazirmatn-digit);
+}
