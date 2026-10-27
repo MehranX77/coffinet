@@ -1,44 +1,40 @@
 <template>
     <div class="hero-section">
-        <div class="flex flex-col justify-center items-center gap-y-3 h-[60dvh]">
-            <UBadge color="neutral" variant="soft" class="md:text-md text-sm">چرا کافی‌چاپ؟</UBadge>
+        <div class="flex flex-col md:justify-center items-center gap-y-3 h-[60dvh]">
+            <UBadge color="neutral" variant="soft" class="md:text-md text-sm md:mt-0 mt-10">چرا الوچـاپ؟</UBadge>
             <h1 class="lg:text-6xl md:text-3xl text-2xl font-extrabold text-white dark:text-slate-100">خدمات کافی‌نت
                 بصورت آنلاین</h1>
             <p class="text-gray-200 lg:text-xl md:text-lg text-sm">بدون نیاز به مراجعه حضوری، در سریع‌ترین زمان ممکن
             </p>
-            <div class="flex justify-center flex-wrap lg:gap-x-4 gap-4 mt-10">
-                <div
-                    class="rounded-2xl bg-white/20 dark:bg-blue-900/40 backdrop-blur-sm flex flex-col lg:p-4 md:p-3 p-2 gap-y-1 text-center lg:w-45 lg:h-35 md:w-40 md:h-32 w-28 h-23 justify-center">
+            <div class="flex justify-center flex-wrap  lg:gap-x-4 gap-4 md:mt-10 mt-4">
+                <div class="rounded-2xl bg-white/20 dark:bg-blue-900/40 backdrop-blur-sm flex flex-col lg:p-4 md:p-3 p-2 gap-y-1 text-center lg:w-45 lg:h-35 md:w-40 md:h-32 w-20 h-20 justify-center">
                     <UIcon name="solar:bolt-outline"
-                        class="mx-auto dark:bg-linear-60 dark:from-blue-700 dark:to-green-500 text-7xl" />
-                    <p class="text-slate-900 dark:text-slate-100 lg:text-lg md:text-md text-xs"> سریع</p>
-                    <span class="text-green-400">بررسی در کمترین زمان</span>
+                        class="mx-auto dark:bg-linear-60 dark:from-blue-700 dark:to-green-500 bg-slate-200/70 lg:text-7xl md:text-5xl text-4xl" />
+                    <p class="text-slate-100 dark:text-slate-100 lg:text-lg md:text-md text-xs"> سریع</p>
+                    <span class="text-green-400 md:block lg:text-sm text-xs hidden">بررسی در کمترین زمان</span>
                 </div>
-                <div
-                    class="rounded-2xl bg-white/20 dark:bg-blue-900/40 backdrop-blur-sm flex flex-col lg:p-4 md:p-3 p-2 gap-y-1 text-center lg:w-45 lg:h-35 md:w-40 md:h-32 w-28 h-23 justify-center">
+                <div class="rounded-2xl bg-white/20 dark:bg-blue-900/40 backdrop-blur-sm flex flex-col lg:p-4 md:p-3 p-2 gap-y-1 text-center lg:w-45 lg:h-35 md:w-40 md:h-32 w-20 h-20 justify-center">
                     <UIcon name="solar:shield-check-outline"
-                        class="mx-auto dark:bg-linear-60 dark:from-blue-700 dark:to-green-500 text-7xl" />
-                    <p class="text-slate-900 dark:text-slate-100 lg:text-lg md:text-md text-xs">امن</p>
-                    <span class="text-green-400">اطلاعات‌ محفوظ است</span>
+                        class="mx-auto dark:bg-linear-60 dark:from-blue-700 dark:to-green-500 bg-slate-200/70 lg:text-7xl md:text-5xl text-4xl" />
+                    <p class="text-slate-100 dark:text-slate-100 lg:text-lg md:text-md text-xs">امن</p>
+                    <span class="text-green-400 md:block lg:text-sm text-xs hidden">اطلاعات‌ محفوظ است</span>
                 </div>
-                <div
-                    class="rounded-2xl bg-white/20 dark:bg-blue-900/40 backdrop-blur-sm flex flex-col lg:p-4 md:p-3 p-2 gap-y-1 text-center lg:w-45 lg:h-35 md:w-40 md:h-32 w-28 h-23 justify-center">
+                <div class="rounded-2xl bg-white/20 dark:bg-blue-900/40 backdrop-blur-sm flex flex-col lg:p-4 md:p-3 p-2 gap-y-1 text-center lg:w-45 lg:h-35 md:w-40 md:h-32 w-20 h-20 justify-center">
                     <UIcon name="solar:wallet-2-outline"
-                        class="mx-auto dark:bg-linear-60 dark:from-blue-700 dark:to-green-500 text-7xl" />
-                    <p class="text-slate-900 dark:text-slate-100 lg:text-lg md:text-md text-xs">مقرون به‌صرفه</p>
-                    <span class="text-green-400">ارزانتر از هرجا</span>
+                        class="mx-auto dark:bg-linear-60 dark:from-blue-700 dark:to-green-500 bg-slate-200/70 lg:text-7xl md:text-5xl text-4xl" />
+                    <p class="text-slate-100 dark:text-slate-100 lg:text-lg md:text-md text-xs">به‌صرفه</p>
+                    <span class="text-green-400 md:block lg:text-sm text-xs hidden">ارزانتر از هرجا</span>
                 </div>
-                <div
-                    class="rounded-2xl bg-white/20 dark:bg-blue-900/40 backdrop-blur-sm flex flex-col lg:p-4 md:p-3 p-2 gap-y-1 text-center lg:w-45 lg:h-35 md:w-40 md:h-32 w-28 h-23 justify-center">
+                <div class="rounded-2xl bg-white/20 dark:bg-blue-900/40 backdrop-blur-sm flex flex-col lg:p-4 md:p-3 p-2 gap-y-1 text-center lg:w-45 lg:h-35 md:w-40 md:h-32 w-20 h-20 justify-center">
                     <UIcon name="solar:smile-circle-outline"
-                        class="mx-auto dark:bg-linear-60 dark:from-blue-700 dark:to-green-500 text-7xl" />
-                    <p class="text-slate-900 dark:text-slate-100 lg:text-lg md:text-md text-xs">آسان</p>
-                    <span class="text-green-400">بدون پیچیدگی سیستم</span>
+                        class="mx-auto dark:bg-linear-60 dark:from-blue-700 dark:to-green-500 bg-slate-200/70 lg:text-7xl md:text-5xl text-4xl" />
+                    <p class="text-slate-100 dark:text-slate-100 lg:text-lg md:text-md text-xs">آسان</p>
+                    <span class="text-green-400 md:block lg:text-sm text-xs hidden">بدون پیچیدگی سیستم</span>
                 </div>
             </div>
         </div>
         <div
-            class="relative rounded-2xl bg-white dark:bg-slate-900/80 dark:backdrop-blur-xl lg:w-[40%] md:w-[95%] w-[98%] h-auto lg:p-4 md:p-3 p-2 -top-10  right-[50%] translate-x-[50%] flex flex-col gap-y-2 justify-center shadow-lg dark:shadow-none dark:ring dark:ring-slate-800">
+            class="relative rounded-2xl bg-white dark:bg-slate-900/80 dark:backdrop-blur-xl xl:w-[40%] lg:w-[75%] md:w-[95%] w-[98%] h-auto lg:p-4 md:p-3 p-2 md:-top-10 -top-50 right-[50%] translate-x-[50%] flex flex-col gap-y-2 justify-center shadow-lg dark:shadow-none dark:ring dark:ring-slate-800">
             <UTabs :items="items" variant="link" color="secondary" :ui="{ trigger: 'grow' }" class="gap-4 w-full">
                 <template #request>
                     <h1 class="lg:text-3xl md:text-2xl text-lg text-center text-blue-900 dark:text-blue-100 mt-3">
