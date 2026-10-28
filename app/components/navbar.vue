@@ -4,7 +4,7 @@
     <div
       class="fixed  w-full dark:bg-slate-900/50 bg-slate-100 border-b border-b-slate-200 dark:border-none backdrop-blur-lg py-4 px-6 z-50 md:flex md:justify-between hidden">
       <div class="logo">
-        <NuxtLink to="/" class="lg:text-2xl md:text-xl text-lg">الوچـاپ</NuxtLink>
+        <NuxtLink to="/" class="lg:text-2xl md:text-xl text-lg">آنـی‌سو</NuxtLink>
       </div>
       <div class="md:flex md:justify-center md:gap-x-2 hidden">
         <UButton to="/" icon="solar:info-circle-broken" color="neutral" variant="link" class="self-center">پشتیبانی

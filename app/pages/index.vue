@@ -1,7 +1,7 @@
 <template>
     <div class="hero-section">
         <div class="flex flex-col md:justify-center items-center gap-y-3 h-[60dvh]">
-            <UBadge color="neutral" variant="soft" class="md:text-md text-sm md:mt-0 mt-10">چرا الوچـاپ؟</UBadge>
+            <UBadge color="primary" variant="subtle" class="md:text-md text-sm md:mt-0 mt-10">چرا آنـی‌سو؟</UBadge>
             <h1 class="lg:text-6xl md:text-3xl text-2xl font-extrabold text-white dark:text-slate-100">خدمات کافی‌نت
                 بصورت آنلاین</h1>
             <p class="text-gray-200 lg:text-xl md:text-lg text-sm">بدون نیاز به مراجعه حضوری، در سریع‌ترین زمان ممکن

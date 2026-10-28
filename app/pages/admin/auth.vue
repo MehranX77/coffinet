@@ -1,8 +1,7 @@
 <template>
     <UContainer>
         <div class="flex justify-center items-center h-screen">
-            <div
-                class="rounded-xl md:py-8 py-5 bg-white dark:bg-slate-900 md:w-110 drop-shadow-2xl drop-shadow-slate-300/30 dark:drop-shadow-slate-800/50 flex flex-col justify-center items-center gap-y-2">
+            <div class="rounded-xl md:p-8 p-5 w-full bg-white dark:bg-slate-900 md:w-110 drop-shadow-2xl drop-shadow-slate-300/30 dark:drop-shadow-slate-800/50 flex flex-col justify-center items-center gap-y-2">
                 <UIcon name="i-heroicons-shield-check" class="h-17 w-17 bg-linear-60 from-blue-500 to-sky-300" />
                 <div>
                     <h1 class="text-2xl font-bold text-gray-800 dark:text-white">
