@@ -41,6 +41,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: ziba;
+  src: url("/assets/fonts/ziba.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme{
   --breakpoint-3xl: 160rem
 }
@@ -66,7 +74,7 @@
 
 :root {
 --text-regular : "Vazirmatn-regular";
---heading-extra-bold: "Vazirmatn-extra-bold"
+--heading-extra-bold: "Vazirmatn-extra-bold";
 }
 
 body {
