@@ -44,5 +44,6 @@ export default defineNuxtConfig({
     workbox:{
       navigateFallback: '/',
     }
-  }
+  },
+  
 })
