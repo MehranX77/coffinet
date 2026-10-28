@@ -43,32 +43,29 @@
                     <p class="text-blue-900/80 dark:text-blue-100/80 lg:text-lg md:text-md text-sm text-center ">
                         برای ثبت درخواست خود، لطفاً اطلاعات مورد نیاز را وارد کنید.</p>
                     <UForm @submit.prevent="submitForm" class="mt-5">
-                        <UFormField label="نام و نام خانوادگی" required class="w-full mb-2" :error="errorList.fullname">
+                        <UFormField label="نام و نام خانوادگی" required class="w-full mb-4 md:mb-2" :error="errorList.fullname">
                             <UInput v-model="customerInfo.fullname" variant="soft" size="xl" class="w-full"
                                 color="secondary" placeholder="نام و نام خانوادگی خود را وارد کنید"
-                                trailing-icon="solar:user-line-duotone" :ui="{ base: 'lg:py-3 rounded-lg' }" />
+                                trailing-icon="solar:user-line-duotone" :ui="{ base: 'lg:py-3 rounded-lg placeholder:text-sm md:placeholder:text-base' }" />
                         </UFormField>
-                        <UFormField label="شماره موبایل" required class="w-full mb-2" :error="errorList.phone">
+                        <UFormField label="شماره موبایل" required class="w-full mb-4 md:mb-2" :error="errorList.phone">
                             <UInput v-model="customerInfo.phone" v-maska="'####-###-####'" variant="soft" size="xl"
                                 class="w-full" color="secondary" placeholder="شماره موبایل خود را وارد کنید"
-                                trailing-icon="solar:phone-line-duotone" :ui="{ base: 'lg:py-3 rounded-lg' }" />
+                                trailing-icon="solar:phone-line-duotone" :ui="{ base: 'lg:py-3 rounded-lg placeholder:text-sm md:placeholder:text-base' }" />
                         </UFormField>
-                        <UFormField label="شرح درخواست" required class="w-full mb-2" :error="errorList.body">
+                        <UFormField label="شرح درخواست" required class="w-full mb-4 md:mb-2" :error="errorList.body">
                             <UTextarea v-model="customerInfo.body" :rows="6" variant="soft" size="xl" class="w-full"
                                 color="secondary" placeholder="لطفا درخواست خود را به‌طور کامل توضیح دهید..."
-                                :ui="{ base: 'lg:py-3 rounded-lg' }" />
+                                :ui="{ base: 'lg:py-3 rounded-lg placeholder:text-sm md:placeholder:text-base' }" />
                         </UFormField>
-                        <UFormField label="بارگذاری مدارک" class="w-full mb-2">
+                        <UFormField label="بارگذاری مدارک" class="w-full mb-4 md:mb-2">
                             <UFileUpload v-model="customerInfo.files" multiple variant="area" size="xl" class="w-full"
                                 color="secondary" label="بارگذاری مدارک"
                                 description="لطفا درصورت نیاز مدارک و اسناد خود را بارگذاری کنید"
                                 accept="image/*,application/pdf,application/docx,application/doc" />
                         </UFormField>
-                        <UButton type="submit" variant="solid" class="w-full place-content-center-safe" size="xl"
-                            icon="solar:plane-3-linear"
-                            :ui="{ base: 'lg:py-4 rounded-lg bg-blue-700 hover:bg-blue-700/80' }">ارسال
-                            درخواست
-                        </UButton>
+                        <UButton type="submit" variant="solid" color="secondary" class="w-full place-content-center-safe" size="xl"
+                            icon="solar:plane-3-linear">ارسال درخواست </UButton>
                     </UForm>
                 </template>
                 <template #tracking>
@@ -78,15 +75,15 @@
                     <p class="text-blue-900/80 dark:text-blue-100/80 lg:text-lg md:text-md text-sm text-center ">با
                         وارد کردن شماره موبایل و کد پیگیری می‌توانید از آخرین وضعیت درخواستتان مطلع شوید</p>
                     <UForm @submit.prevent="trackRequestHandler" class="mt-5">
-                        <UFormField label="کد پیگیری" required class="w-full mb-2">
+                        <UFormField label="کد پیگیری" required class="w-full mb-4 md:mb-2">
                             <UInput v-model="trackingRequest.trackingCode" variant="soft" size="xl" class="w-full"
                                 color="secondary" placeholder="کد پیگیری خود را وارد کنید"
-                                trailing-icon="solar:user-line-duotone" :ui="{ base: 'lg:py-3 rounded-lg' }" />
+                                trailing-icon="solar:user-line-duotone" :ui="{ base: 'lg:py-3 rounded-lg placeholder:text-sm md:placeholder:text-base' }" />
                         </UFormField>
-                        <UFormField label="شماره موبایل" required class="w-full mb-2">
+                        <UFormField label="شماره موبایل" required class="w-full mb-4 md:mb-2">
                             <UInput v-model="trackingRequest.phone" v-maska="'####-###-####'" variant="soft" size="xl"
                                 class="w-full" color="secondary" placeholder="شماره موبایل خود را وارد کنید"
-                                trailing-icon="solar:phone-line-duotone" :ui="{ base: 'lg:py-3 rounded-lg' }" />
+                                trailing-icon="solar:phone-line-duotone" :ui="{ base: 'lg:py-3 rounded-lg placeholder:text-sm md:placeholder:text-base' }" />
                         </UFormField>
                         <UButton type="submit" variant="solid" class="w-full place-content-center-safe" size="xl"
                             color="secondary" icon="solar:magnifier-linear"
