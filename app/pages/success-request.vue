@@ -35,21 +35,20 @@
 
         </div>
 
-        <h1 class="text-center text-3xl text-green-700 mt-15">درخواست شما با موفقیت ثبت شد</h1>
-        <span class="text-base mt-2">از اعتماد شما سپاگزاریم.</span>
-        <span class="text-muted"> به‌زودی با شما تماس خواهیم گرفت</span>
+        <h1 class="text-center text-3xl font-bold text-green-700 mt-15">درخواست شما با موفقیت ثبت شد</h1>
+        <span class="text-muted text-sm">از اعتماد شما سپاسگزاریم،به‌زودی با شما تماس خواهیم گرفت</span>
         <div class="dark:bg-slate-900 bg-slate-100 p-4 rounded-xl mt-5 w-full flex flex-col items-center gap-y-3">
-            <h1 class="text-xl text-slate-600 dark:text-slate-300">کد پیگیری شما</h1>
+            <h1 class="text-xl text-slate-600 dark:text-slate-300 font-black">کد پیگیری شما</h1>
             <div class="flex justify-center gap-x-1">
                 <UTooltip text="ذخیره کدپیگیری" arrow>
                     <UButton variant="ghost" color="secondary" size="xl" icon="solar:clipboard-linear" @click="useClipboard(customerState?.trackCode) && toast.add({color:'success', title:'عملیات موفق' , description: 'کد رهگیری در حافظه ذخیره شد'})"/>
                 </UTooltip>
-                <h1 class="text-3xl text-sky-600 dark:text-slate-300 self-center">{{ customerState?.trackCode}}</h1>
+                <h2 class="text-3xl text-sky-600 dark:text-slate-300 self-center">{{ customerState?.trackCode}}</h2>
             </div>
             <span class="text-muted">لطفا این کد را برای پیگیری درخواست خود نگهدارید</span>
         </div>
         <USeparator label="قدم بعدی چیست؟" class="mt-7" :ui="{ label: 'font-bold' }" />
-            <UTimeline orientation="horizontal" :default-value="Number(customerState?.data?.status)" :items="items" size="2xl" class="w-full mt-10" />
+            <UTimeline orientation="horizontal" :default-value="Number(customerState?.data?.status)" :items="items" size="2xl" class="w-full mt-10 " />
     </div>
 </template>
 

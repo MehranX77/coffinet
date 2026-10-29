@@ -24,7 +24,7 @@
           </template>
         </UAlert>
       </div>
-        <NuxtPage />
+      <NuxtPage />
     </UMain>
   </UApp>
 </template>
