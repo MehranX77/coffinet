@@ -11,7 +11,11 @@ export default defineEventHandler(async (event) => {
         if (response.status === 200) {
             return response
         }
+
     } catch (error) {
-        return error?.data?.message || error?.data
+        throw createError({
+            statusCode: 401,
+            message:error?.data?.message || error?.data
+        }) 
     }
 })

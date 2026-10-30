@@ -18,9 +18,18 @@ definePageMeta({
     middleware: 'auth'
 })
 
+interface requestType {
+    data:any
+}
 
+const {data:result, error} = await useFetch<requestType>('/api/requests')
+console.log('ressss:', result);
 
-const {data:result, error} = await useFetch('/api/requests')
+if (error?.value) {
+     showError({
+        data:error.value.data
+    })
+}
 
 console.log(error.value?.data);
 

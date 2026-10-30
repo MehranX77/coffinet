@@ -1,7 +1,7 @@
 <template>
     <UContainer class="max-w-420 mt-5 relative h-[calc(100dvh-64px)]">
         <div
-            class="blur-3xl w-[100rem] -z-50 h-80 absolute -left-30 top-0 bg-linear-60 from-sky-400/20 via-85% via-white to-rose-400/20 to-70% dark:hidden" />
+            class="blur-3xl w-[100rem] -z-50 h-80 absolute -left-30 top-0 bg-linear-60 from-sky-400/20 via-85% via-violet-50 to-rose-300/20 to-70% dark:hidden" />
         <div class="flex justify-between">
             <h1
                 class="text-transparent bg-clip-text bg-linear-60 from-120% from-blue-500 to-45% to-sky-500 font-black text-4xl">
@@ -21,7 +21,7 @@
                 <div class="flex md:flex-row lg:flex-col xl:flex-row flex-col justify-center md:gap-2 gap-4">
                     <div
                         class="border-2 border-slate-300/50 dark:border-slate-50/10 dark:backdrop-blur-lg dark:border rounded-xl p-4 flex flex-col gap-y-3 md:flex-1 bg-white/10 dark:bg-slate-800/60 dark:hover:border-sky-500 hover:border-sky-400 transition-all">
-                        <div class="bg-sky-300/20 dark:bg-slate-700/30 p-4 flex rounded-2xl self-start">
+                        <div class="bg-sky-100/80 dark:bg-slate-700/30 p-4 flex rounded-2xl self-start">
                             <UIcon name="solar:clock-circle-linear" class="text-2xl text-black dark:text-slate-50/70" />
                         </div>
                         <p class="font-bold text-regular">اطلاع‌رسانی آنی</p>
@@ -30,7 +30,7 @@
                     </div>
                     <div
                         class="border-2 border-slate-300/50 dark:border-slate-50/10 dark:backdrop-blur-lg dark:border rounded-xl p-4 flex flex-col gap-y-3 md:flex-1 bg-white/10 dark:bg-slate-800/60 dark:hover:border-sky-500 hover:border-sky-400 transition-all">
-                        <div class="bg-sky-300/20 dark:bg-slate-700/30 p-4 flex rounded-2xl self-start">
+                        <div class="bg-sky-100/80 dark:bg-slate-700/30 p-4 flex rounded-2xl self-start">
                             <UIcon name="solar:shield-check-linear" class="text-2xl text-black dark:text-slate-50/70" />
                         </div>
                         <p class="font-bold text-regular">پردازش و نگهداری امن</p>
@@ -75,7 +75,7 @@
                                 class="w-full" />
                         </UFormField>
                         <UFormField label="بارگذاری مدارک" class="col-span-2">
-                            <UFileUpload v-model="customerInfo.files" multiple variant="area" size="xl" class="w-full"
+                            <UFileUpload layout="list" v-model="customerInfo.files" multiple variant="area" size="xl" class="w-full"
                                 :ui="{ base: 'bg-transparent dark:border dark:border-slate-600' }" color="secondary"
                                 label="بارگذاری مدارک" description="لطفا درصورت نیاز مدارک و اسناد خود را بارگذاری کنید"
                                 accept="image/*,application/pdf,application/docx,application/doc" />
@@ -83,8 +83,8 @@
                         <UButton type="submit" variant="outline" color="secondary"
                             class="col-span-2 place-content-center-safe lg:py-4" size="xl" icon="solar:plane-3-linear">
                             ارسال درخواست </UButton>
-                        <UDrawer inset
-                            :ui="{ overlay: 'bg-slate-400/20 backdrop-blur-lg', content: 'md:w-3/6 md:mx-auto w-full' }">
+
+                        <UDrawer inset :ui="{ overlay: 'bg-slate-400/20 backdrop-blur-lg', content: 'md:w-3/6 md:mx-auto w-full' }">
                             <UButton variant="subtle" icon="solar:card-search-outline" color="neutral" size="xl"
                                 class="place-content-center col-span-2 lg:py-4">پیگیری درخواست</UButton>
                             <template #content>

@@ -10,9 +10,7 @@ export default defineEventHandler(async (event) => {
 
         if (result.status === 200) {
             deleteCookie(event, 'auth-token', {
-                path:'/',
-                httpOnly: true,
-                expires: new Date(1998)
+                path:'/'
             })
             return result
 
