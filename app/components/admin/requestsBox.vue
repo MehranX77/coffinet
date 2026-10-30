@@ -6,7 +6,7 @@
                 <USelect v-model="selectValue" :items="selectItems" value-key="value" :icon="icon" class="w-40" arrow
                     variant="subtle" color="secondary" />
             </div>
-            <UTable :loading="!Tdata?.length" loading-color="secondary" loading-animation="carousel" sticky class="mt-5"
+            <UTable :loading="!Tdata?.length" loading-color="secondary" loading-animation="carousel" sticky class="mt-5 max-h-[50dvh]"
                 :columns="columns" :data="Tdata">
                 <template #index-cell="{ row }">
                     {{ Number(row?.id) + 1 }}

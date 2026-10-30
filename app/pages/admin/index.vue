@@ -8,6 +8,8 @@
 </template>
 
 <script setup lang="ts">
+import {LazyAdminChangePasswordModal} from '#components'
+
 definePageMeta({
     layout: {
         name: 'default',
@@ -16,6 +18,17 @@ definePageMeta({
         }
     },
     middleware: 'auth'
+})
+
+const overlay = useOverlay()
+const modal = overlay.create(LazyAdminChangePasswordModal)
+
+const openChangePasswordModal = async () => {
+  await modal.open()
+}
+
+onMounted(() => {
+    openChangePasswordModal()
 })
 
 interface requestType {
@@ -30,8 +43,6 @@ if (error?.value) {
         data:error.value.data
     })
 }
-
-console.log(error.value?.data);
 
 
 </script>
