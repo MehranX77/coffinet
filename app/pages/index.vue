@@ -1,7 +1,6 @@
 <template>
-    <UContainer class="max-w-420 mt-5 relative h-[calc(100dvh-64px)]">
-        <div
-            class="blur-3xl w-[100rem] -z-50 h-80 absolute -left-30 top-0 bg-linear-60 from-sky-400/20 via-85% via-violet-50 to-rose-300/20 to-70% dark:hidden" />
+    <UContainer class="xl:max-w-415 lg:max-w-420 w-full mt-5 relative h-[calc(100dvh-64px)]">
+        <div class="blur-3xl lg:w-[100rem] -z-50 h-80 absolute -left-30 top-0 bg-linear-60 from-sky-400/20 via-85% via-violet-50 to-rose-300/20 to-70% dark:hidden" />
         <div class="flex justify-between">
             <h1
                 class="text-transparent bg-clip-text bg-linear-60 from-120% from-blue-500 to-45% to-sky-500 font-black text-4xl">
@@ -9,7 +8,7 @@
             <UColorModeButton color="secondary" />
         </div>
 
-        <div class="grid md:grid-cols-12 grid-cols-1 md:gap-x-8 gap-y-4 mt-10">
+        <div class="grid md:grid-cols-12 grid-cols-1 md:gap-x-8 gap-y-4 mt-10 3xl:mt-0 3xl:h-[calc(100dvh-64px)]">
             <div class="lg:col-span-6 col-span-12 flex flex-col self-center gap-y-4">
                 <UBadge class="md:self-start self-center-safe text-sm md:p-2" variant="soft" color="info" size="xl"
                     icon="solar:clock-circle-line-duotone">پاسخگویی سریع تنها در چند دقیقه!</UBadge>
@@ -39,9 +38,8 @@
                     </div>
                 </div>
             </div>
-            <div class="lg:col-span-6 col-span-12 flex flex-col gap-y-4">
-                <div
-                    class="rounded-2xl md:p-6 p-4 flex flex-col gap-y-12 bg-white/40 backdrop-blur-lg dark:backdrop-blur-2xl dark:bg-slate-800/10 z-50 shadow-2xl shadow-slate-400/20 dark:shadow-none dark:border dark:border-slate-700">
+            <div class="lg:col-span-6 col-span-12 flex flex-col gap-y-4 self-center">
+                <div class="rounded-2xl md:p-6 p-4 flex flex-col gap-y-12 bg-white/40 backdrop-blur-lg dark:backdrop-blur-2xl dark:bg-slate-800/10 z-50 shadow-2xl shadow-slate-400/20 dark:shadow-none dark:border dark:border-slate-700 3xl:h-[calc(100dvh-100px)]">
 
                     <div class="flex justify-between">
                         <div class="flex flex-col gap-y-2">
@@ -56,7 +54,7 @@
                         </div>
                     </div>
                     <UForm @submit.prevent="submitForm"
-                        class="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 grid-cols-1 gap-5">
+                        class="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 grid-cols-1 gap-5 3xl:h-screen">
                         <UFormField label="نام و نام خانوادگی" required
                             class="xl:col-span-1 lg:col-span-2 md:col-span-1 col-span-2" :error="errorList.fullname">
                             <UInput v-model="customerInfo.fullname" trailing-icon="solar:user-line-duotone"
@@ -71,12 +69,12 @@
                         </UFormField>
                         <UFormField label="شرح درخواست" required class="col-span-2" :error="errorList.body">
                             <UTextarea v-model="customerInfo.body" variant="subtle" :rows="5" size="xl" color="info"
-                                :ui="{ base: 'rounded-lg ' }" placeholder="لطفا درخواست خود را بطور کامل بنویسید"
+                                :ui="{ base: 'rounded-lg 3xl:h-[calc(30dvh-80px)]' }" placeholder="لطفا درخواست خود را بطور کامل بنویسید"
                                 class="w-full" />
                         </UFormField>
                         <UFormField label="بارگذاری مدارک" class="col-span-2">
-                            <UFileUpload layout="list" v-model="customerInfo.files" multiple variant="area" size="xl" class="w-full"
-                                :ui="{ base: 'bg-transparent dark:border dark:border-slate-600' }" color="secondary"
+                            <UFileUpload layout="list" position="inside" v-model="customerInfo.files" multiple variant="area" size="xl" class="w-full 3xl:h-[calc(30dvh-80px)]"
+                                :ui="{ base: 'bg-transparent dark:border dark:border-slate-600 ' }" color="secondary"
                                 label="بارگذاری مدارک" description="لطفا درصورت نیاز مدارک و اسناد خود را بارگذاری کنید"
                                 accept="image/*,application/pdf,application/docx,application/doc" />
                         </UFormField>
@@ -84,7 +82,7 @@
                             class="col-span-2 place-content-center-safe lg:py-4" size="xl" icon="solar:plane-3-linear">
                             ارسال درخواست </UButton>
 
-                        <UDrawer inset :ui="{ overlay: 'bg-slate-400/20 backdrop-blur-lg', content: 'md:w-3/6 md:mx-auto w-full' }">
+                        <UDrawer inset :ui="{ overlay: 'bg-slate-400/20 backdrop-blur-lg min-w-full', content: 'lg:w-3/6 lg:mx-auto' }">
                             <UButton variant="subtle" icon="solar:card-search-outline" color="neutral" size="xl"
                                 class="place-content-center col-span-2 lg:py-4">پیگیری درخواست</UButton>
                             <template #content>
